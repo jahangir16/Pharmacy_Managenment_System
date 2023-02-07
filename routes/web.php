@@ -16,6 +16,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\MedicinesGenericController;
 use App\Http\Controllers\MedicinePackagingController;
+use App\Http\Controllers\PurchaseOrderController;
 
 
 /*
@@ -48,3 +49,4 @@ Route::resource('employees', EmployeeController::class);
 Route::resource('medicines', MedicineController::class);
 Route::resource('medicinesGenerics', MedicinesGenericController::class);
 Route::resource('medicinePackagings', MedicinePackagingController::class);
+Route::resource('purchaseOrders', PurchaseOrderController::class);

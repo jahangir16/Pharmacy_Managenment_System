@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\PurchaseOrder;
+use App\Models\MedicinePackaging;
+use App\Models\Vendor;
 use App\Http\Requests\StorePurchaseOrderRequest;
 use App\Http\Requests\UpdatePurchaseOrderRequest;
 
@@ -15,7 +17,7 @@ class PurchaseOrderController extends Controller
      */
     public function index()
     {
-        //
+        return view("PurchaseOrder.index")->with("abc",PurchaseOrder::all());
     }
 
     /**
@@ -25,7 +27,9 @@ class PurchaseOrderController extends Controller
      */
     public function create()
     {
-        //
+        $packaging=MedicinePackaging::all();
+        $vendor=Vendor::all();
+        return view("PurchaseOrder.create",compact('packaging','vendor'));
     }
 
     /**

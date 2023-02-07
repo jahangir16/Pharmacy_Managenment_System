@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('purchase_orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('medicine_packaging_id')->constrained();
+            $table->foreignId('vendor_id')->constrained();
+            $table->Integer('order_quantity');
+            $table->date('order_date');
             $table->timestamps();
         });
     }
